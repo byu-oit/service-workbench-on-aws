@@ -31,3 +31,7 @@ docs/build
 */*/*/config/settings/*.yml
 !*/*/*/config/settings/.defaults.yml
 !*/*/*/config/settings/example*.yml
+
+package-lock.json
+pnpm-lock.yaml
+pnpm-lock.yml
