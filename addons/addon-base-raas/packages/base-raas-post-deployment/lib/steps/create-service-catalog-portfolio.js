@@ -47,20 +47,33 @@ const productsToCreate = [
   {
     filename: 'sagemaker-notebook-instance',
     displayName: 'SageMaker Notebook',
-    description: `An Amazon SageMaker Jupyter Notebook that comes with: \n* TensorFlow \n* Apache MXNet \n* Scikit-learn
-  `,
+    description: `An Amazon SageMaker Jupyter Notebook that comes with: \n* TensorFlow \n* Apache MXNet \n* Scikit-learn`,
   },
   {
     filename: 'emr-cluster',
     displayName: 'EMR',
-    description: `An Amazon EMR research workspace that comes with: \n* Hail 0.2 \n* Jupyter Lab \n* Spark 2.4.4 \n* Hadoop 2.8.5
-`,
+    description: `An Amazon EMR research workspace that comes with: \n* Hail 0.2 \n* Jupyter Lab \n* Spark 2.4.4 \n* Hadoop 2.8.5`,
   },
   {
     filename: 'ec2-windows-instance',
     displayName: 'EC2 Windows',
     description: `* An EC2 Windows instance with RDP access \n* Secure compute in the cloud`,
   },
+  {
+    displayName: 'Serverless Aurora RDS',
+    filename: 'serverless-rds-aurora',
+    description: `Serverless Amazon Aurora RDS Cluster`,
+  },
+  // {
+  //   displayName: 'Managed MySQL RDS', // Please make sure the display name is unique in this list
+  //   filename: 'managed-rds-mysql', // This is the name of your file you've added in the step above
+  //   description: ``,
+  // },
+  // {
+  //   displayName: 'Managed PostreSQL RDS', // Please make sure the display name is unique in this list
+  //   filename: 'managed-rds-postgresql', // This is the name of your file you've added in the step above
+  //   description: ``,
+  // },
 ];
 
 const autoCreateVersion = 'v1';
