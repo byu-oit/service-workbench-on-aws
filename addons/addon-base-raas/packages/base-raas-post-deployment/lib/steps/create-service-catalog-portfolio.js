@@ -61,11 +61,11 @@ const productsToCreate = [
     displayName: 'EC2 Windows',
     description: `* An EC2 Windows instance with RDP access \n* Secure compute in the cloud`,
   },
-  {
-    filename: 'rds-manged-aurora',
-    displayName: 'Managed Serverless Aurora RDS',
-    description: `* A Managed Serverless Aurora RDS instance \n* Secure database service in the cloud`,
-  },
+  // {
+  //   filename: 'rds-manged-aurora',
+  //   displayName: 'Managed Serverless Aurora RDS',
+  //   description: `* A Managed Serverless Aurora RDS instance \n* Secure database service in the cloud`,
+  // },
 ];
 
 const autoCreateVersion = 'v1';

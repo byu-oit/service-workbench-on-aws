@@ -36,6 +36,9 @@ Parameters:
   VPC:
     Description: VPC for EMR nodes.
     Type: AWS::EC2::VPC::Id
+  # VPCCidr:
+  #   Description: CIDR block for the VPC in which teh database instance will reside
+  #   Type: String
   Subnet:
     Description: Subnet for EMR nodes, from the VPC selected above
     Type: AWS::EC2::Subnet::Id
@@ -116,6 +119,11 @@ Resources:
           ToPort: 8192
           CidrIp:
             Ref: AccessFromCIDRBlock
+        # - IpProtocol: tcp
+        #   FromPort: 8192
+        #   ToPort: 8192
+        #   CidrIp:
+        #     Ref: VPCCidr
 
   InstanceProfile:
     Properties:
