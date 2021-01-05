@@ -26,7 +26,7 @@ regionShortNamesMap:
   'us-gov-west-1': 'gcw'
 
 # The default region to deploy to
-awsRegion: us-east-1
+awsRegion: us-west-2
 
 # Short region name
 # This is used in the namespace to avoid naming collisions to allow deploying the same solution across multiple regions
@@ -78,7 +78,7 @@ environmentsBootstrapBucketPrefix: environment-files
 
 # The short solution name is used to namespace a few AWS resources
 # Try to keep this setting short to avoid hitting long strings issues
-# solutionName: sw
+solutionName: rsch
 
 # The environment name where you want to deploy the solution to. (e.g. developer1, developer2, demo, prod etc.)
 # This is also used for creating a namespace for resources. Usually, this is same as serverless "stage".
@@ -161,7 +161,7 @@ launchConstraintPolicyPrefix: '*'
 # If enableBuiltInWorkspaces = true then built in workspaces/workspace types are used.
 # If enableBuiltInWorkspaces = false then support for importing new workspace types based on
 #  AWS Service Catalog Products/Versions is enabled and the built-in workspaces feature is disabled
-enableBuiltInWorkspaces: false
+enableBuiltInWorkspaces: true
 
 # Name of the audit QLDB. This is the name of the QLDB ledger that will keep the audit logs.
 auditQldbName: ${self:custom.settings.namespace}-audit
