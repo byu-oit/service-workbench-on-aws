@@ -15,14 +15,14 @@ jobs:
       - name: Set up DEV Environment Variables
         if: github.ref == 'refs/heads/byu-dev'
         run: |
-          JSON=$(cat ./stage_names_dev.json)
+          
           matrix='{
             "env":[
               {
                 "aws_key_name":"BYU_RSCH_MAIN_DEV_KEY",
                 "aws_secret_name":"BYU_RSCH_MAIN_DEV_SECRET",
                 "slack_channel":"#cloud-team-builds",
-                "stage_names": ${JSON//'%'/'%25'}
+                "stage_file": "stage_names_dev.json"
               }
             ]
           }'
@@ -79,7 +79,8 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets[matrix.env.aws_key_name] }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets[matrix.env.aws_secret_name] }}
         run: |
-          for stage in ${{ matrix.env.stage_names }}
+          JSON=$(cat ./${{ matrix.env.stage_file }})
+          for stage in ${JSON//'%'/'%25'}
           do
           ./scripts/environment-deploy.sh stage
           done
