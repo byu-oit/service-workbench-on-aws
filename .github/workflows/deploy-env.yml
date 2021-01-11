@@ -82,7 +82,7 @@ jobs:
           JSON=$(cat ./${{ matrix.env.stage_file }})
           for stage in ${JSON//'%'/'%25'}
           do
-          ./scripts/environment-deploy.sh stage
+          ./scripts/environment-deploy.sh $stage
           done
 
   # cypress-test:
