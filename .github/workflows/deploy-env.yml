@@ -1,60 +1,113 @@
 name: Deploy
 on:
   push:
-    branches:
-      - master
+    branches: [master, byu-dev]
+
+env:
+  node_version: "12"
+  go-version: "1.13"
+
 jobs:
+  env:
+    name: Set Env Vars
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up DEV Environment Variables
+        if: github.ref == 'refs/heads/byu-dev'
+        run: |
+          JSON=$(cat ./stage_names_dev.json)
+          matrix='{
+            "env":[
+              {
+                "aws_key_name":"BYU_RSCH_MAIN_DEV_KEY",
+                "aws_secret_name":"BYU_RSCH_MAIN_DEV_SECRET",
+                "slack_channel":"#cloud-team-builds",
+                "stage_names": ${JSON//'%'/'%25'}
+              }
+            ]
+          }'
+          echo matrix=`echo $matrix | jq -c .` >> $GITHUB_ENV
+
+      # ***** PRD ENV *****
+      - name: Set up PRD Environment Variables
+        if: github.ref == 'refs/heads/prd'
+        run: |
+          matrix='{
+            "env":[
+              {
+                "aws_key_name":"BYU_RSCH_MAIN_PRD_KEY",
+                "aws_secret_name":"BYU_RSCH_MAIN_PRD_SECRET",
+                "slack_channel":"#cloud-team-builds"
+              }
+            ]
+          }'
+          echo matrix=`echo $matrix | jq -c .` >> $GITHUB_ENV
+    outputs:
+      matrix: ${{ env.matrix }} 
+  
   deploy:
-    name: Deploy to Dev
+    name: Deploy
     runs-on: ubuntu-18.04
+    needs: env
+    strategy:
+      matrix: ${{ fromJson(needs.env.outputs.matrix) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Use Node.js
+
+      - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: ${{ env.node_version }}
+
       - uses: actions/setup-go@v2
         with:
-          go-version: 1.13
+          go-version: ${{ env.go-version }}
+
       - name: Install pnpm
         run: npm install -g pnpm
+
       - name: Install dependencies
         run: ./scripts/install.sh
+
       - name: Build all packages
         run: ./scripts/build-all-packages.sh
+
       - name: Deploy
         env:
-          STAGE_NAME: e2etest
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID}}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+          AWS_ACCESS_KEY_ID: ${{ secrets[matrix.env.aws_key_name] }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets[matrix.env.aws_secret_name] }}
         run: |
-          cp ./main/end-to-end-tests/e2eGitHubConfig.yml ./main/config/settings/${STAGE_NAME}.yml
-          ./scripts/environment-deploy.sh ${STAGE_NAME}
-  cypress-test:
-    name: Cypress test
-    runs-on: ubuntu-18.04
-    needs: deploy
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - name: Install pnpm and system libraries
-        run: |
-          npm install -g pnpm
-          sudo apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-      - name: Install dependencies
-        run: pnpm install
-        working-directory: main/end-to-end-tests
-      - name: Run cypress test
-        run: pnpm run cypress:run-tests:github
-        working-directory: main/end-to-end-tests
-        env:
-          # Env parameters for cypress tests need header 'CYPRESS_' or 'cypress_'
-          # Cypress will strip the header and pass it to the tests
-          CYPRESS_BASE_URL: ${{ secrets.CYPRESS_BASE_URL}}
-          CYPRESS_researcherEmail: ${{ secrets.CYPRESS_RESEARCHER_EMAIL}}
-          CYPRESS_researcherPassword: ${{ secrets.CYPRESS_RESEARCHER_PASSWORD}}
+          for stage in ${{ matrix.env.stage_names }}
+          do
+          ./scripts/environment-deploy.sh stage
+          done
+
+  # cypress-test:
+  #   name: Cypress test
+  #   runs-on: ubuntu-18.04
+  #   needs: deploy
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #     - name: Use Node.js
+  #       uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12
+  #     - name: Install pnpm and system libraries
+  #       run: |
+  #         npm install -g pnpm
+  #         sudo apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+  #     - name: Install dependencies
+  #       run: pnpm install
+  #       working-directory: main/end-to-end-tests
+  #     - name: Run cypress test
+  #       run: pnpm run cypress:run-tests:github
+  #       working-directory: main/end-to-end-tests
+  #       env:
+  #         # Env parameters for cypress tests need header 'CYPRESS_' or 'cypress_'
+  #         # Cypress will strip the header and pass it to the tests
+  #         CYPRESS_BASE_URL: ${{ secrets.CYPRESS_BASE_URL}}
+  #         CYPRESS_researcherEmail: ${{ secrets.CYPRESS_RESEARCHER_EMAIL}}
+  #         CYPRESS_researcherPassword: ${{ secrets.CYPRESS_RESEARCHER_PASSWORD}}
