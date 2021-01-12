@@ -28,6 +28,9 @@ Parameters:
   VPC:
     Description: The VPC in which the EC2 instance will reside
     Type: AWS::EC2::VPC::Id
+  # VPCCidr:
+  #   Description: CIDR block for the VPC in which teh database instance will reside
+  #   Type: String
   Subnet:
     Description: The VPC subnet in which the EC2 instance will reside
     Type: AWS::EC2::Subnet::Id
@@ -106,15 +109,27 @@ Resources:
           FromPort: -1
           ToPort: -1
           CidrIp: !Ref AccessFromCIDRBlock
+        # - IpProtocol: icmp
+        #   FromPort: -1
+        #   ToPort: -1
+        #   CidrIp: !Ref VPCCidr
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
           CidrIp: !Ref AccessFromCIDRBlock
         - IpProtocol: tcp
+          #   FromPort: 80
+          #   ToPort: 80
+          #   CidrIp: !Ref VPCCidr
+          # - IpProtocol: tcp
           FromPort: 443
           ToPort: 443
           CidrIp: !Ref AccessFromCIDRBlock
+        # - IpProtocol: tcp
+        #   FromPort: 443
+        #   ToPort: 443
+        #   CidrIp: !Ref VPCCidr
       Tags:
         - Key: Name
           Value: !Join ['-', [Ref: Namespace, 'ec2-sg']]

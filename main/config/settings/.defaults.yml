@@ -169,3 +169,43 @@ auditQldbName: ${self:custom.settings.namespace}-audit
 # Enable this to create a Service Catalog portfolio and populate workspace products
 # Override and disable this setting if you wish to create your portfolio manually
 createServiceCatalogPortfolio: true
+
+# Array of identity provider ids.
+# The usual practice is to keep this same as the domain name of the idp.
+# For example, when connecting with an IdP that has users "user1@example.com", "user2@example.com" etc then
+# the id should be set to "example.com"
+#
+# If you do not want to connect to Active Directory then leave this setting as its default.
+fedIdpIds: '["byu.edu"]'
+
+# Array of identity provider names. This array should be in same order as the "fedIdpIds"
+# Some name for the IdPs. (such as 'com.ee', 'EEAD' etc)
+#
+# If you do not want to connect to Active Directory then leave this setting as its default.
+fedIdpNames: '["AzureAD"]'
+
+# Array of identity provider display names. This array should be in same order as the "fedIdpIds"
+# Display name (such as 'Employee Login', 'AD Login' etc). This can be used in UI to login options.
+#
+# If you do not want to connect to Active Directory then leave this setting as its default.
+fedIdpDisplayNames: '["BYU Azure AD"]'
+
+# Array of identity provider SAML metadata. This array should be in same order as the "fedIdpIds".
+# The array should contain either
+# 1. S3 or http(s) url pointing to the IdP metadata.
+#  If S3 URL then it must be accessible by the post-deployment lambda
+#   (i.e., the lambda must have getObject permission to read the specified metadata file location from S3)
+#   The GetObject permission is given by the "RolePostDeploymentLambda" in "post-deployment/config/infra/cloudformation.yml"
+#  If it's http(s) URL then it must be reachable over the public internet.
+# (TODO: Add support for metadata URLs accessible only in private network.)
+# OR
+# 2. the metadata content XML blob as string
+# The current implementation looks for the file in "solution/post-deployment/config/saml-metadata" directory and
+# uploads the file to the S3 directory (prefix) "${self:custom.settings.deploymentBucketName}/saml-metadata/".
+# The uploading of the file is done using serverless s3-sync plugin. See "post-deployment/serverless.yml"
+# file and search for "s3Sync" to see which files are uploaded to the "${self:custom.settings.deploymentBucketName}" S3
+# bucket.
+#
+# If you do not want to connect to Active Directory then leave this setting as its default.
+# TODO: Remove saml-metadata/datalake-example-idp-metadata.xml file and replace this setting to use sample file
+fedIdpMetadatas: '["https://login.microsoftonline.com/c6fc6e9b-51fb-48a8-b779-9ee564b40413/federationmetadata/2007-06/federationmetadata.xml?appid=c950319f-9808-46e7-8cf8-2e4000de9baf"]'
