@@ -1,4 +1,3 @@
----
 AWSTemplateFormatVersion: 2010-09-09
 
 Description: Service-Workbench-on-AWS Managed RDS Aurora
@@ -45,21 +44,15 @@ Parameters:
     Type: Number
     Description: Number of seconds until database auto-pauses
     Default: 300
-  IamPolicyDocument:
-    Type: String
-    Description: The IAM policy to be associated with the launched database
   VPC:
     Description: The VPC in which the database instance will reside
     Type: AWS::EC2::VPC::Id
   VPCCidr:
-    Description: CIDR block for the VPC in which teh database instance will reside
+    Description: CIDR block for the VPC in which the database instance will reside
     Type: String
   EncryptionKeyArn:
     Type: String
     Description: The ARN of the KMS encryption Key used to encrypt data in the instance
-
-Conditions:
-  IamPolicyEmpty: !Equals [!Ref IamPolicyDocument, '{}']
 
 Resources:
   SecurityGroup:

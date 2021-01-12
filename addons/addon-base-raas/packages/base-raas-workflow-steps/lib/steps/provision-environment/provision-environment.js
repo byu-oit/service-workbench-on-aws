@@ -84,9 +84,11 @@ class ProvisionEnvironment extends StepBase {
       case 'sagemaker':
         template = await cfnTemplateService.getTemplate('sagemaker-notebook-instance');
         break;
+      case 'rds-managed-aurora':
+        template = await cfnTemplateService.getTemplate('rds-manged-aurora');
+        break;
       case 'emr': {
         template = await cfnTemplateService.getTemplate('emr-cluster');
-
         addParam('DiskSizeGB', environment.instanceInfo.config.diskSizeGb.toString());
         addParam('MasterInstanceType', environment.instanceInfo.size);
         addParam('WorkerInstanceType', environment.instanceInfo.config.workerInstanceSize);
