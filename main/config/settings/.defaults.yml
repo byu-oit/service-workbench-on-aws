@@ -125,9 +125,9 @@ enableExternalResearchers: false
 localRoleAutoAdjustTrust: true
 
 # Optional custom domain name; if empty, use the CloudFront domain name
-domainName: ''
-certificateArn: ''
-hostedZoneId: ''
+domainName: '${opt:stage}.awsresearch.byu.edu' # Domain in Prd
+certificateArn: 'arn:aws:acm:us-west-2:992162713805:certificate/c1005f5e-f2eb-4ada-9e45-12606d189541' # Prd certificate
+hostedZoneId: 'Z089807923D53MSG7ACJE' # Prd Hosted Zone
 
 # An environment management role giving AWS Service Catalog Permissions
 # This is the role that the Admin users share their AWS Service Catalog products/portfolios with.
