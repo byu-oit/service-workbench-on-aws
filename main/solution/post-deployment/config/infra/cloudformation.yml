@@ -17,6 +17,7 @@ Resources:
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
         - arn:aws:iam::aws:policy/AmazonCognitoPowerUser
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: assume-role
           PolicyDocument:
@@ -218,6 +219,7 @@ Resources:
         # The permissions required by stacks are very fluid and dependent on which resources are declared in those
         # stacks
         - arn:aws:iam::aws:policy/PowerUserAccess
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: ServiceCatalogProductLaunchPermissions
           PolicyDocument:

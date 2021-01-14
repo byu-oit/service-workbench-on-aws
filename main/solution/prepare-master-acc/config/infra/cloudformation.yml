@@ -12,10 +12,11 @@ Resources:
             Condition:
               StringEquals:
                 sts:ExternalId: ${self:custom.settings.externalId}
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: AllowOrganizationAccessInMasterAcc
           PolicyDocument:
-            Version: "2012-10-17"
+            Version: '2012-10-17'
             Statement:
               - Sid: OrgAccess
                 Effect: Allow
@@ -23,16 +24,16 @@ Resources:
                   - organizations:describeAccount
                   - organizations:describeCreateAccountStatus
                   - organizations:createAccount
-                Resource: "*"
+                Resource: '*'
         - PolicyName: AllowAssumeRoleInMemberAcc
           PolicyDocument:
-            Version: "2012-10-17"
+            Version: '2012-10-17'
             Statement:
               - Sid: AssumeMemberAccOrgRole
                 Effect: Allow
                 Action:
                   - sts:AssumeRole
-                Resource: "arn:aws:iam::*:role/OrganizationAccountAccessRole"
+                Resource: 'arn:aws:iam::*:role/OrganizationAccountAccessRole'
 Outputs:
   MasterRoleArn:
     Value: !GetAtt MasterRole.Arn

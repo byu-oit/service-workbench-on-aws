@@ -279,6 +279,7 @@ Resources:
             Action: 'sts:AssumeRole'
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: db-access
           PolicyDocument:
@@ -323,6 +324,7 @@ Resources:
             Action: 'sts:AssumeRole'
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: db-access
           PolicyDocument:
@@ -528,6 +530,7 @@ Resources:
             Action: 'sts:AssumeRole'
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: db-access
           PolicyDocument:
@@ -695,6 +698,7 @@ Resources:
             Action: 'sts:AssumeRole'
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: lambda
           PolicyDocument:
@@ -717,6 +721,7 @@ Resources:
             Action: 'sts:AssumeRole'
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: db-access
           PolicyDocument:
@@ -745,6 +750,7 @@ Resources:
             Action: 'sts:AssumeRole'
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: db-environment-access
           PolicyDocument:
@@ -795,6 +801,7 @@ Resources:
             Action: 'sts:AssumeRole'
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AWSServiceCatalogAdminFullAccess
+      PermissionsBoundary: !Sub 'arn:aws:iam::${AWS::AccountId}:policy/iamRolePermissionBoundary'
       Policies:
         - PolicyName: ec2-access
           PolicyDocument:
