@@ -111,7 +111,7 @@ importers:
       serverless: 1.67.3
       serverless-deployment-bucket: 1.1.1
       typescript: 3.8.3
-      webpack: 4.41.2_webpack@4.41.2
+      webpack: 4.41.2
     specifiers:
       '@auth0/auth0-spa-js': ^1.2.3
       '@aws-ee/base-services': 'workspace:*'
@@ -745,7 +745,7 @@ importers:
       serverless: 1.67.3
       serverless-deployment-bucket: 1.1.1
       typescript: 3.8.3
-      webpack: 4.41.2_webpack@4.41.2
+      webpack: 4.41.2
     specifiers:
       '@aws-ee/base-serverless-settings-helper': 'workspace:*'
       '@aws-ee/base-serverless-ui-tools': 'workspace:*'
@@ -936,7 +936,7 @@ importers:
       serverless: 1.67.3
       serverless-deployment-bucket: 1.1.1
       typescript: 3.8.3
-      webpack: 4.41.2_webpack@4.41.2
+      webpack: 4.41.2
     specifiers:
       '@aws-ee/base-ui': 'workspace:*'
       '@babel/cli': ^7.8.4
@@ -2009,7 +2009,7 @@ importers:
       serverless-s3-sync: 1.12.0
       serverless-webpack: 5.3.1_webpack@4.42.1
       source-map-support: 0.5.16
-      webpack: 4.42.1_webpack@4.42.1
+      webpack: 4.42.1
       webpack-cli: 3.3.11_webpack@4.42.1
       webpack-node-externals: 1.7.2
     optionalDependencies:
@@ -2161,7 +2161,7 @@ importers:
       serverless-s3-sync: 1.12.0
       serverless-webpack: 5.3.4_webpack@4.42.1
       source-map-support: 0.5.16
-      webpack: 4.42.1_webpack@4.42.1
+      webpack: 4.42.1
     specifiers:
       '@aws-ee/base-post-deployment': 'workspace:*'
       '@aws-ee/base-raas-post-deployment': 'workspace:*'
@@ -2310,7 +2310,7 @@ importers:
       toastr: ^2.1.4
       typeface-lato: 0.0.75
       uuid: ^3.4.0
-lockfileVersion: 5.1
+lockfileVersion: 5.2
 packages:
   /2-thenable/1.0.0:
     dependencies:
@@ -4904,7 +4904,7 @@ packages:
       jest-haste-map: 24.9.0
       jest-message-util: 24.9.0
       jest-regex-util: 24.9.0
-      jest-resolve: 24.9.0_jest-resolve@24.9.0
+      jest-resolve: 24.9.0
       jest-resolve-dependencies: 24.9.0
       jest-runner: 24.9.0
       jest-runtime: 24.9.0
@@ -4939,7 +4939,7 @@ packages:
       jest-haste-map: 25.3.0
       jest-message-util: 25.3.0
       jest-regex-util: 25.2.6
-      jest-resolve: 25.3.0_jest-resolve@25.3.0
+      jest-resolve: 25.3.0
       jest-resolve-dependencies: 25.3.0
       jest-runner: 25.3.0
       jest-runtime: 25.3.0
@@ -5016,7 +5016,7 @@ packages:
       istanbul-lib-source-maps: 3.0.6
       istanbul-reports: 2.2.7
       jest-haste-map: 24.9.0
-      jest-resolve: 24.9.0_jest-resolve@24.9.0
+      jest-resolve: 24.9.0
       jest-runtime: 24.9.0
       jest-util: 24.9.0
       jest-worker: 24.9.0
@@ -5046,7 +5046,7 @@ packages:
       istanbul-lib-source-maps: 4.0.0
       istanbul-reports: 3.0.2
       jest-haste-map: 25.3.0
-      jest-resolve: 25.3.0_jest-resolve@25.3.0
+      jest-resolve: 25.3.0
       jest-util: 25.3.0
       jest-worker: 25.2.6
       slash: 3.0.0
@@ -5902,15 +5902,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
-  /@tencent-sdk/capi/0.2.15:
-    dependencies:
-      object-assign: 4.1.1
-      querystring: 0.2.0
-      request: 2.88.2
-      request-promise-native: 1.0.8_request@2.88.2
-    dev: true
-    resolution:
-      integrity: sha512-5t94Mo/+Kdvr60tJR/+pylUCwIM+ipcBIkUi4M7dtV0yCpuykOXV4GYT1aWg/iWMXyIPnfOUk4Pr6OwDoAVehw==
   /@tencent-sdk/capi/0.2.17:
     dependencies:
       '@types/chalk': 2.2.0
@@ -7459,7 +7450,7 @@ packages:
       mkdirp: 0.5.5
       pify: 4.0.1
       schema-utils: 2.6.5
-      webpack: 4.41.2_webpack@4.41.2
+      webpack: 4.41.2
     dev: true
     engines:
       node: '>= 6.9'
@@ -7476,7 +7467,7 @@ packages:
       mkdirp: 0.5.5
       pify: 4.0.1
       schema-utils: 2.6.5
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
     dev: true
     engines:
       node: '>= 6.9'
@@ -7493,7 +7484,7 @@ packages:
       mkdirp: 0.5.5
       pify: 4.0.1
       schema-utils: 2.6.5
-      webpack: 4.42.1_webpack@4.42.1
+      webpack: 4.42.1
     dev: true
     engines:
       node: '>= 6.9'
@@ -7728,12 +7719,6 @@ packages:
       node: '>= 0.6.0'
     resolution:
       integrity: sha1-mBjHngWbE1X5fgQooBfIOOkLqBI=
-  /base64-arraybuffer/0.1.5:
-    dev: true
-    engines:
-      node: '>= 0.6.0'
-    resolution:
-      integrity: sha1-c5JncZI7Whl0etZmqlzUv5xunOg=
   /base64-js/1.3.1:
     resolution:
       integrity: sha512-mLQ4i2QO1ytvGWFWmcngKO//JXAQueZvwEKtjgQFM4jIK0kU+ytMfplL8j+n5mspOfjHwoAg+9yhb7BwAHm36g==
@@ -7749,12 +7734,6 @@ packages:
       tweetnacl: 0.14.5
     resolution:
       integrity: sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
-  /better-assert/1.0.2:
-    dependencies:
-      callsite: 1.0.0
-    dev: true
-    resolution:
-      integrity: sha1-QIZrnhueC1W0gYlDEeaPr/rrxSI=
   /big.js/5.2.2:
     dev: true
     resolution:
@@ -8212,10 +8191,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-Ro+DBE42mrIBD6xfBs7uFbsssfQ=
-  /callsite/1.0.0:
-    dev: true
-    resolution:
-      integrity: sha1-KAOY5dZkvXQDi28JBRU+borxvCA=
   /callsites/2.0.0:
     dev: true
     engines:
@@ -8814,10 +8789,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-AMYIq33Nk4l8AAllGx06jh5zu9E=
-  /component-emitter/1.2.1:
-    dev: true
-    resolution:
-      integrity: sha1-E3kY1teCg/ffemt8WmPhQOaUJeY=
   /component-emitter/1.3.0:
     dev: true
     resolution:
@@ -9036,7 +9007,7 @@ packages:
       p-limit: 2.3.0
       schema-utils: 1.0.0
       serialize-javascript: 2.1.2
-      webpack: 4.42.1_webpack@4.42.1
+      webpack: 4.42.1
       webpack-log: 2.0.0
     dev: true
     engines:
@@ -9315,7 +9286,7 @@ packages:
       postcss-modules-values: 3.0.0
       postcss-value-parser: 4.1.0
       schema-utils: 2.7.1
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
     dev: true
     engines:
       node: '>= 8.9.0'
@@ -9571,7 +9542,7 @@ packages:
       is-ci: 2.0.0
       is-installed-globally: 0.3.2
       lazy-ass: 1.6.0
-      listr: 0.14.3_listr@0.14.3
+      listr: 0.14.3
       lodash: 4.17.20
       log-symbols: 3.0.0
       minimist: 1.2.5
@@ -10410,22 +10381,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==
-  /engine.io-client/3.4.0:
-    dependencies:
-      component-emitter: 1.2.1
-      component-inherit: 0.0.3
-      debug: 4.1.1
-      engine.io-parser: 2.2.0
-      has-cors: 1.1.0
-      indexof: 0.0.1
-      parseqs: 0.0.5
-      parseuri: 0.0.5
-      ws: 6.1.4
-      xmlhttprequest-ssl: 1.5.5
-      yeast: 0.1.2
-    dev: true
-    resolution:
-      integrity: sha512-a4J5QO2k99CM2a0b12IznnyQndoEvtA4UAldhGzKqnHf42I3Qs2W5SPnDvatZRcMaNZs4IevVicBPayxYt6FwA==
   /engine.io-client/3.4.4:
     dependencies:
       component-emitter: 1.3.0
@@ -10442,16 +10397,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-iU4CRr38Fecj8HoZEnFtm2EiKGbYZcPn3cHxqNGl/tmdWRf60KhK+9vE0JeSjgnlS/0oynEfLgKbT9ALpim0sQ==
-  /engine.io-parser/2.2.0:
-    dependencies:
-      after: 0.8.2
-      arraybuffer.slice: 0.0.7
-      base64-arraybuffer: 0.1.5
-      blob: 0.0.5
-      has-binary2: 1.0.3
-    dev: true
-    resolution:
-      integrity: sha512-6I3qD9iUxotsC5HEMuuGsKA0cXerGz+4uGcXQEkfBidgKf0amsjrrtwcbwK/nzpZBxclXlV7gGl9dgWvu4LF6w==
   /engine.io-parser/2.2.1:
     dependencies:
       after: 0.8.2
@@ -10929,7 +10874,7 @@ packages:
       loader-utils: 1.4.0
       object-hash: 2.0.3
       schema-utils: 2.7.1
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
     deprecated: This loader has been deprecated. Please use eslint-webpack-plugin
     dev: true
     engines:
@@ -11787,7 +11732,7 @@ packages:
     dependencies:
       loader-utils: 1.4.0
       schema-utils: 2.7.1
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
     dev: true
     engines:
       node: '>= 8.9.0'
@@ -12290,7 +12235,6 @@ packages:
       integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==
   /fsevents/2.1.2:
     deprecated: Please update to latest version
-    dev: true
     engines:
       node: ^8.16.0 || ^10.6.0 || >=11.0.0
     optional: true
@@ -13004,7 +12948,7 @@ packages:
       pretty-error: 2.1.2
       tapable: 1.1.3
       util.promisify: 1.0.0
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
     dev: true
     engines:
       node: '>=6.9'
@@ -14279,7 +14223,7 @@ packages:
       jest-get-type: 24.9.0
       jest-jasmine2: 24.9.0
       jest-regex-util: 24.9.0
-      jest-resolve: 24.9.0_jest-resolve@24.9.0
+      jest-resolve: 24.9.0
       jest-util: 24.9.0
       jest-validate: 24.9.0
       micromatch: 3.1.10
@@ -14304,7 +14248,7 @@ packages:
       jest-get-type: 25.2.6
       jest-jasmine2: 25.3.0
       jest-regex-util: 25.2.6
-      jest-resolve: 25.3.0_jest-resolve@25.3.0
+      jest-resolve: 25.3.0
       jest-util: 25.3.0
       jest-validate: 25.3.0
       micromatch: 4.0.2
@@ -14637,7 +14581,7 @@ packages:
       integrity: sha512-yRn6GbuqB4j3aYu+Z1ezwRiZfp0o9om5uOcBovVtkcRLeBCNP5mT0ysdenUsxAHnQUgGwPOE1wwhtQYe6NKirQ==
   /jest-pnp-resolver/1.2.1_jest-resolve@25.3.0:
     dependencies:
-      jest-resolve: 25.3.0_jest-resolve@25.3.0
+      jest-resolve: 25.3.0
     dev: true
     engines:
       node: '>=6'
@@ -14650,7 +14594,7 @@ packages:
       integrity: sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
   /jest-pnp-resolver/1.2.2_jest-resolve@24.9.0:
     dependencies:
-      jest-resolve: 24.9.0_jest-resolve@24.9.0
+      jest-resolve: 24.9.0
     dev: true
     engines:
       node: '>=6'
@@ -14693,7 +14637,7 @@ packages:
       node: '>= 8.3'
     resolution:
       integrity: sha512-bDUlLYmHW+f7J7KgcY2lkq8EMRqKonRl0XoD4Wp5SJkgAxKJnsaIOlrrVNTfXYf+YOu3VCjm/Ac2hPF2nfsCIA==
-  /jest-resolve/24.9.0_jest-resolve@24.9.0:
+  /jest-resolve/24.9.0:
     dependencies:
       '@jest/types': 24.9.0
       browser-resolve: 1.11.3
@@ -14703,11 +14647,9 @@ packages:
     dev: true
     engines:
       node: '>= 6'
-    peerDependencies:
-      jest-resolve: '*'
     resolution:
       integrity: sha512-TaLeLVL1l08YFZAt3zaPtjiVvyy4oSA6CRe+0AFPPVX3Q/VI0giIWWoAvoS5L96vj9Dqxj4fB5p2qrHCmTU/MQ==
-  /jest-resolve/25.3.0_jest-resolve@25.3.0:
+  /jest-resolve/25.3.0:
     dependencies:
       '@jest/types': 25.3.0
       browser-resolve: 1.11.3
@@ -14718,8 +14660,6 @@ packages:
     dev: true
     engines:
       node: '>= 8.3'
-    peerDependencies:
-      jest-resolve: '*'
     resolution:
       integrity: sha512-IHoQAAybulsJ+ZgWis+ekYKDAoFkVH5Nx/znpb41zRtpxj4fr2WNV9iDqavdSm8GIpMlsfZxbC/fV9DhW0q9VQ==
   /jest-runner/24.9.0:
@@ -14737,7 +14677,7 @@ packages:
       jest-jasmine2: 24.9.0
       jest-leak-detector: 24.9.0
       jest-message-util: 24.9.0
-      jest-resolve: 24.9.0_jest-resolve@24.9.0
+      jest-resolve: 24.9.0
       jest-runtime: 24.9.0
       jest-util: 24.9.0
       jest-worker: 24.9.0
@@ -14763,7 +14703,7 @@ packages:
       jest-jasmine2: 25.3.0
       jest-leak-detector: 25.3.0
       jest-message-util: 25.3.0
-      jest-resolve: 25.3.0_jest-resolve@25.3.0
+      jest-resolve: 25.3.0
       jest-runtime: 25.3.0
       jest-util: 25.3.0
       jest-worker: 25.2.6
@@ -14791,7 +14731,7 @@ packages:
       jest-message-util: 24.9.0
       jest-mock: 24.9.0
       jest-regex-util: 24.9.0
-      jest-resolve: 24.9.0_jest-resolve@24.9.0
+      jest-resolve: 24.9.0
       jest-snapshot: 24.9.0
       jest-util: 24.9.0
       jest-validate: 24.9.0
@@ -14824,7 +14764,7 @@ packages:
       jest-message-util: 25.3.0
       jest-mock: 25.3.0
       jest-regex-util: 25.2.6
-      jest-resolve: 25.3.0_jest-resolve@25.3.0
+      jest-resolve: 25.3.0
       jest-snapshot: 25.3.0
       jest-util: 25.3.0
       jest-validate: 25.3.0
@@ -14860,7 +14800,7 @@ packages:
       jest-get-type: 24.9.0
       jest-matcher-utils: 24.9.0
       jest-message-util: 24.9.0
-      jest-resolve: 24.9.0_jest-resolve@24.9.0
+      jest-resolve: 24.9.0
       mkdirp: 0.5.5
       natural-compare: 1.4.0
       pretty-format: 24.9.0
@@ -14881,7 +14821,7 @@ packages:
       jest-get-type: 25.2.6
       jest-matcher-utils: 25.3.0
       jest-message-util: 25.3.0
-      jest-resolve: 25.3.0_jest-resolve@25.3.0
+      jest-resolve: 25.3.0
       make-dir: 3.0.2
       natural-compare: 1.4.0
       pretty-format: 25.3.0
@@ -15598,7 +15538,7 @@ packages:
       elegant-spinner: 1.0.1
       figures: 1.7.0
       indent-string: 3.2.0
-      listr: 0.14.3_listr@0.14.3
+      listr: 0.14.3
       log-symbols: 1.0.2
       log-update: 2.3.0
       strip-ansi: 3.0.1
@@ -15620,7 +15560,7 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-04PDPqSlsqIOaaaGZ+41vq5FejI9auqTInicFRndCBgE3bXG8D6W1I+mWhk+1nqbHmyhla/6BUrd5OSiHwKRXw==
-  /listr/0.14.3_listr@0.14.3:
+  /listr/0.14.3:
     dependencies:
       '@samverschueren/stream-to-observable': 0.3.1_rxjs@6.5.5
       is-observable: 1.1.0
@@ -15634,8 +15574,6 @@ packages:
     dev: true
     engines:
       node: '>=6'
-    peerDependencies:
-      listr: '*'
     resolution:
       integrity: sha512-RmAl7su35BFd/xoMamRjpIE4j3v+L28o8CT5YhAXQJm1fD+1l9ngXY8JAQRJ+tFK2i5njvi0iRUKV09vPwA0iA==
   /load-json-file/2.0.0:
@@ -16270,7 +16208,7 @@ packages:
       loader-utils: 1.4.0
       normalize-url: 1.9.1
       schema-utils: 1.0.0
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
       webpack-sources: 1.4.3
     dev: true
     engines:
@@ -16941,10 +16879,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
-  /object-component/0.0.3:
-    dev: true
-    resolution:
-      integrity: sha1-8MaapQ78lbhmwYb0AKM3acsvEpE=
   /object-copy/0.1.0:
     dependencies:
       copy-descriptor: 0.1.1
@@ -17203,7 +17137,7 @@ packages:
     dependencies:
       cssnano: 4.1.10
       last-call-webpack-plugin: 3.0.0
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
     dev: true
     peerDependencies:
       webpack: ^4.0.0
@@ -17516,22 +17450,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-fxNG2sQjHvlVAYmzBZS9YlDp6PTSSDwa98vkD4QgVDDCAo84z5X1t5XyJQ62ImdLXx5NdIIfihey6xpum9/gRQ==
-  /parseqs/0.0.5:
-    dependencies:
-      better-assert: 1.0.2
-    dev: true
-    resolution:
-      integrity: sha1-1SCKNzjkZ2bikbouoXNoSSGouJ0=
   /parseqs/0.0.6:
     dev: true
     resolution:
       integrity: sha512-jeAGzMDbfSHHA091hr0r31eYfTig+29g3GKKE/PPbEQ65X0lmMwlEoqmhzu0iztID5uJpZsFlUPDP8ThPL7M8w==
-  /parseuri/0.0.5:
-    dependencies:
-      better-assert: 1.0.2
-    dev: true
-    resolution:
-      integrity: sha1-gCBKUNTbt3m/3G6+J3jZDkvOMgo=
   /parseuri/0.0.6:
     dev: true
     resolution:
@@ -19092,6 +19014,7 @@ packages:
       prop-types: 15.7.2
       react: 16.13.1
       scheduler: 0.19.1
+    dev: false
     peerDependencies:
       react: ^16.13.1
     resolution:
@@ -19339,7 +19262,7 @@ packages:
       identity-obj-proxy: 3.0.0
       jest: 24.9.0
       jest-environment-jsdom-fourteen: 1.0.1
-      jest-resolve: 24.9.0_jest-resolve@24.9.0
+      jest-resolve: 24.9.0
       jest-watch-typeahead: 0.4.2
       mini-css-extract-plugin: 0.9.0_webpack@4.42.0
       optimize-css-assets-webpack-plugin: 5.0.3_webpack@4.42.0
@@ -19359,7 +19282,7 @@ packages:
       terser-webpack-plugin: 2.3.8_webpack@4.42.0
       ts-pnp: 1.1.6
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.42.0
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
       webpack-dev-server: 3.11.0_webpack@4.42.0
       webpack-manifest-plugin: 2.2.0_webpack@4.42.0
       workbox-webpack-plugin: 4.3.1_webpack@4.42.0
@@ -19501,6 +19424,7 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       prop-types: 15.7.2
+    dev: false
     engines:
       node: '>=0.10.0'
     resolution:
@@ -20252,7 +20176,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 2.7.1
       semver: 6.3.0
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
     dev: true
     engines:
       node: '>= 8.9.0'
@@ -20558,13 +20482,13 @@ packages:
       integrity: sha512-bJYdS/J3FleL/GJXM0SnoTTNUAAyhYAh4JD4jbLEdZ83zJ4aEhPelWHOCnpVWDRf350cIS1ctyhL6P1L2c7qKA==
   /serverless-tencent-tools/1.0.14:
     dependencies:
-      '@tencent-sdk/capi': 0.2.15
+      '@tencent-sdk/capi': 0.2.17
       dijkstrajs: 1.0.1
       dot-qs: 0.2.0
       duplexify: 4.1.1
       end-of-stream: 1.4.4
       https-proxy-agent: 5.0.0
-      socket.io-client: 2.3.0
+      socket.io-client: 2.3.1
       socket.io-stream: 0.9.1
       winston: 3.2.1
     dev: true
@@ -20580,7 +20504,7 @@ packages:
       lodash: 4.17.15
       semver: 5.7.1
       ts-node: 3.3.0
-      webpack: 4.42.1_webpack@4.42.1
+      webpack: 4.42.1
     dev: true
     peerDependencies:
       webpack: '>= 3.0.0 < 6'
@@ -20596,7 +20520,7 @@ packages:
       lodash: 4.17.20
       semver: 6.3.0
       ts-node: 8.10.2
-      webpack: 4.42.1_webpack@4.42.1
+      webpack: 4.42.1
     dev: true
     peerDependencies:
       webpack: '>= 3.0.0 < 6'
@@ -20946,25 +20870,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FtyOnWN/wCHTVXOMwvSv26d+ko5vWlIDD6zoUJ7LW8vh+ZBC8QdljveRP+crNrtBwioEUWy/4dMtbBjA4ioNlg==
-  /socket.io-client/2.3.0:
-    dependencies:
-      backo2: 1.0.2
-      base64-arraybuffer: 0.1.5
-      component-bind: 1.0.0
-      component-emitter: 1.2.1
-      debug: 4.1.1
-      engine.io-client: 3.4.0
-      has-binary2: 1.0.3
-      has-cors: 1.1.0
-      indexof: 0.0.1
-      object-component: 0.0.3
-      parseqs: 0.0.5
-      parseuri: 0.0.5
-      socket.io-parser: 3.3.0
-      to-array: 0.1.4
-    dev: true
-    resolution:
-      integrity: sha512-cEQQf24gET3rfhxZ2jJ5xzAOo/xhZwK+mOqtGRg5IowZsMgwvHwnf/mCRapAAkadhM26y+iydgwsXGObBB5ZdA==
   /socket.io-client/2.3.1:
     dependencies:
       backo2: 1.0.2
@@ -20981,14 +20886,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YXmXn3pA8abPOY//JtYxou95Ihvzmg8U6kQyolArkIyLd0pgVhrfor/iMsox8cn07WCOOvvuJ6XKegzIucPutQ==
-  /socket.io-parser/3.3.0:
-    dependencies:
-      component-emitter: 1.2.1
-      debug: 3.1.0
-      isarray: 2.0.1
-    dev: true
-    resolution:
-      integrity: sha512-hczmV6bDgdaEbVqhAeVMM/jfUfzuEZHsQg6eOmLgJht6G3mPKMxYm75w2+qhAQZ+4X+1+ATZ+QFKeOZD5riHng==
   /socket.io-parser/3.3.1:
     dependencies:
       component-emitter: 1.3.0
@@ -21744,7 +21641,7 @@ packages:
       serialize-javascript: 2.1.2
       source-map: 0.6.1
       terser: 4.6.11
-      webpack: 4.41.2_webpack@4.41.2
+      webpack: 4.41.2
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
     dev: true
@@ -21763,7 +21660,7 @@ packages:
       serialize-javascript: 2.1.2
       source-map: 0.6.1
       terser: 4.6.11
-      webpack: 4.42.1_webpack@4.42.1
+      webpack: 4.42.1
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
     dev: true
@@ -21782,7 +21679,7 @@ packages:
       serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.0
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
     dev: true
@@ -21802,7 +21699,7 @@ packages:
       serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.0
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
       webpack-sources: 1.4.3
     dev: true
     engines:
@@ -22163,7 +22060,7 @@ packages:
       integrity: sha512-kzeQ5B8H3w60nFY2g8cJIuH7JDpsALXySGtwGJ0p2LSjLgay3NdIpqq5SoOBe46bKDW2iq25irHCr8wjomUS2g==
   /tsutils/3.17.1_typescript@3.8.3:
     dependencies:
-      tslib: 1.13.0
+      tslib: 1.14.1
       typescript: 3.8.3
     dev: true
     engines:
@@ -22466,7 +22363,7 @@ packages:
       loader-utils: 1.4.0
       mime: 2.4.6
       schema-utils: 2.7.1
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
     dev: true
     engines:
       node: '>= 8.9.0'
@@ -22757,7 +22654,7 @@ packages:
       loader-utils: 1.2.3
       supports-color: 6.1.0
       v8-compile-cache: 2.0.3
-      webpack: 4.42.1_webpack@4.42.1
+      webpack: 4.42.1
       yargs: 13.2.4
     dev: true
     engines:
@@ -22773,7 +22670,7 @@ packages:
       mime: 2.4.6
       mkdirp: 0.5.5
       range-parser: 1.2.1
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
       webpack-log: 2.0.0
     dev: true
     engines:
@@ -22813,7 +22710,7 @@ packages:
       strip-ansi: 3.0.1
       supports-color: 6.1.0
       url: 0.11.0
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
       webpack-dev-middleware: 3.7.2_webpack@4.42.0
       webpack-log: 2.0.0
       ws: 6.2.1
@@ -22845,7 +22742,7 @@ packages:
       lodash: 4.17.20
       object.entries: 1.1.3
       tapable: 1.1.3
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
     dev: true
     engines:
       node: '>=6.11.5'
@@ -22864,7 +22761,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lgTS3Xhv1lCOKo7SA5TjKXMjpSM4sBjNV5+q2bqesbSPs5FjGmU6jjtBSkX9b4qW87vDIsCIlUPOEhbZrMdjeQ==
-  /webpack/4.41.2_webpack@4.41.2:
+  /webpack/4.41.2:
     dependencies:
       '@webassemblyjs/ast': 1.8.5
       '@webassemblyjs/helper-module-context': 1.8.5
@@ -22893,11 +22790,9 @@ packages:
     engines:
       node: '>=6.11.5'
     hasBin: true
-    peerDependencies:
-      webpack: '*'
     resolution:
       integrity: sha512-Zhw69edTGfbz9/8JJoyRQ/pq8FYUoY0diOXqW0T6yhgdhCv6wr0hra5DwwWexNRns2Z2+gsnrNcbe9hbGBgk/A==
-  /webpack/4.42.0_webpack@4.42.0:
+  /webpack/4.42.0:
     dependencies:
       '@webassemblyjs/ast': 1.8.5
       '@webassemblyjs/helper-module-context': 1.8.5
@@ -22926,11 +22821,9 @@ packages:
     engines:
       node: '>=6.11.5'
     hasBin: true
-    peerDependencies:
-      webpack: '*'
     resolution:
       integrity: sha512-EzJRHvwQyBiYrYqhyjW9AqM90dE4+s1/XtCfn7uWg6cS72zH+2VPFAlsnW0+W0cDi0XRjNKUMoJtpSi50+Ph6w==
-  /webpack/4.42.1_webpack@4.42.1:
+  /webpack/4.42.1:
     dependencies:
       '@webassemblyjs/ast': 1.9.0
       '@webassemblyjs/helper-module-context': 1.9.0
@@ -22959,8 +22852,6 @@ packages:
     engines:
       node: '>=6.11.5'
     hasBin: true
-    peerDependencies:
-      webpack: '*'
     resolution:
       integrity: sha512-SGfYMigqEfdGchGhFFJ9KyRpQKnipvEvjc1TwrXEPCM6H5Wywu10ka8o3KGrMzSMxMQKt8aCHUFh5DaQ9UmyRg==
   /websocket-driver/0.6.5:
@@ -23197,7 +23088,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.12.5
       json-stable-stringify: 1.0.1
-      webpack: 4.42.0_webpack@4.42.0
+      webpack: 4.42.0
       workbox-build: 4.3.1
     dev: true
     engines:

@@ -78,7 +78,7 @@ environmentsBootstrapBucketPrefix: environment-files
 
 # The short solution name is used to namespace a few AWS resources
 # Try to keep this setting short to avoid hitting long strings issues
-# solutionName: sw
+solutionName: rsch
 
 # The environment name where you want to deploy the solution to. (e.g. developer1, developer2, demo, prod etc.)
 # This is also used for creating a namespace for resources. Usually, this is same as serverless "stage".
@@ -126,7 +126,7 @@ localRoleAutoAdjustTrust: true
 
 # Optional custom domain name; if empty, use the CloudFront domain name
 domainName: '${opt:stage}.awsresearch.byu.edu' # Domain in Prd
-certificateArn: 'arn:aws:acm:us-west-2:992162713805:certificate/d15a99c8-3d86-415b-97f9-2a56c910a2c0' # Prd certificate
+certificateArn: 'arn:aws:acm:us-east-1:992162713805:certificate/55afd348-98d7-41f7-a0f4-2f869894ebd7' # Prd certificate
 hostedZoneId: 'Z093473424C8EQB0LRJUR' # Prd Hosted Zone
 
 # An environment management role giving AWS Service Catalog Permissions

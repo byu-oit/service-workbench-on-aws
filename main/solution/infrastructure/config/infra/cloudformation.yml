@@ -2,6 +2,10 @@ Conditions:
   IsDev: !Equals ['${self:custom.settings.envType}', 'dev']
   UseCustomDomain: !Not
     - !Equals ['${self:custom.settings.domainName}', '']
+  CreateHostedZone: !Equals ['${self:custom.settings.hostedZoneId}', '']
+  CustomDomainAndCreateHostedZone: !And
+    - Condition: UseCustomDomain
+    - Condition: CreateHostedZone
 
 Resources:
   # =============================================================================================
@@ -166,7 +170,7 @@ Resources:
 
   HostedZone:
     Type: AWS::Route53::HostedZone
-    Condition: UseCustomDomain
+    Condition: CustomDomainAndCreateHostedZone
     DeletionPolicy: Retain
     Properties:
       Name: ${self:custom.settings.domainName}
@@ -175,12 +179,15 @@ Resources:
     Type: AWS::Route53::RecordSetGroup
     Condition: UseCustomDomain
     Properties:
-      HostedZoneId: !Ref HostedZone
+      HostedZoneId: !If
+        - CreateHostedZone
+        - !Ref HostedZone
+        - ${self:custom.settings.hostedZoneId}
       RecordSets:
         - Name: ${self:custom.settings.domainName}
           Type: A
           AliasTarget:
-            HostedZoneId: Z2FDTNDATAQYW2 # This is a required hard-coded string that is to be used for AWS
+            HostedZoneId: Z2FDTNDATAQYW2 # This is always the hosted zone ID when you create an alias record that routes traffic to a CloudFront distribution.
             DNSName: !GetAtt WebsiteCloudFront.DomainName
 
 Outputs:
@@ -206,6 +213,6 @@ Outputs:
   HostedZoneId:
     Description: Id of the hosted zone created when a custom domain is used
     Value: !If
-      - UseCustomDomain
+      - CreateHostedZone
       - !Ref HostedZone
       - 'NotSetAsCustomDomainDisabled'
