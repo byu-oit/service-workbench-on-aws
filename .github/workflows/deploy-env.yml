@@ -80,9 +80,13 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets[matrix.env.aws_secret_name] }}
         run: |
           JSON=$(cat ./${{ matrix.env.stage_file }})
-          for stage in ${JSON//'%'/'%25'}
-          do
-          ./scripts/environment-deploy.sh $stage
+          for row in $(echo "${JSON}" | jq -r '.[]'); do
+            _jq() {
+              echo ${row} | jq -r ${1}
+            }
+
+            echo $(_jq '.stage_name')
+            
           done
 
   # cypress-test:
@@ -112,3 +116,7 @@ jobs:
   #         CYPRESS_BASE_URL: ${{ secrets.CYPRESS_BASE_URL}}
   #         CYPRESS_researcherEmail: ${{ secrets.CYPRESS_RESEARCHER_EMAIL}}
   #         CYPRESS_researcherPassword: ${{ secrets.CYPRESS_RESEARCHER_PASSWORD}}
+
+
+
+  # ./scripts/environment-deploy.sh $stage
