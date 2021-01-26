@@ -2,6 +2,7 @@ name: Deploy
 on:
   push:
     branches: [master, byu-dev]
+  
 
 env:
   node_version: "12"
@@ -79,14 +80,10 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets[matrix.env.aws_key_name] }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets[matrix.env.aws_secret_name] }}
         run: |
-          JSON=$(cat ./${{ matrix.env.stage_file }})
-          for row in $(echo "${JSON}" | jq -r '.[]'); do
-            _jq() {
-              echo ${row} | jq -r ${1}
-            }
-
-            echo $(_jq '.stage_name')
-            
+          for row in $(jq -r '.[].stage_name' ${{ matrix.env.stage_file }}); do
+              
+              echo ${row}
+              ./scripts/environment-deploy.sh ${row}
           done
 
   # cypress-test:
@@ -119,4 +116,4 @@ jobs:
 
 
 
-  # ./scripts/environment-deploy.sh $stage
+  # 
