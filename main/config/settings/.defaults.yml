@@ -26,7 +26,7 @@ regionShortNamesMap:
   'us-gov-west-1': 'gcw'
 
 # The default region to deploy to
-awsRegion: us-east-1
+awsRegion: us-west-2
 
 # Short region name
 # This is used in the namespace to avoid naming collisions to allow deploying the same solution across multiple regions
