@@ -7,6 +7,8 @@ Conditions:
     - Condition: UseCustomDomain
     - Condition: CreateHostedZone
 
+Description: (SO0144) Service Workbench on AWS Solution
+
 Resources:
   # =============================================================================================
   # S3 Buckets
